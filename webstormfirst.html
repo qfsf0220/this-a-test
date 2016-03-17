@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this is a test</title>
+<style>
+    /*公共开始*/
+
+    body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td, figure {
+        margin: 0;
+        padding: 0;
+
+    }
+
+    ol, ul, li {
+        list-style: none;
+    }
+    a{
+        cursor:pointer;
+        text-decoration:none;
+    }
+    /*a:hover{
+        color: #F60 !important;
+        text-decoration: underline;
+    }*/
+    img{
+        border:none;
+        border-width:0px;
+        border-width:0px;
+    }
+    table{
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .red{
+        color: #c00!important;
+    }
+    .m8{
+        margin:8px;
+    }
+    .font16{
+        font-size:16px;
+    }
+    .bold{
+        font-weight:bold;
+    }
+    .left{
+        float:left;
+    }
+    .right{
+        float:right;
+    }
+    .hide{
+        display:none;
+    }
+    .show{
+        display:table;
+    }
+    .clearfix{
+        clear:both;
+    }
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+    * html .clearfix {zoom: 1;}
+
+    .container{
+        width:1190px;
+        margin-left:auto;
+        margin-right:auto;
+
+    }
+
+    .group-box-1 .title{
+        height: 33px;
+        line-height: 33px;
+        border: 1px solid #DDD;
+        background: #f5f5f5;
+        padding-top: 0;
+        padding-left: 0;
+
+    }
+    .group-box-1 .title .title-font{
+        display: inline-block;
+        font-size: 14px;
+        font-family: 'Microsoft Yahei','SimHei';
+        font-weight: bold;
+        color: #333;
+        padding-left: 10px;
+    }
+    .group-box-1 .body {
+        border: 1px solid #e4e4e4;
+        border-top: none;
+    }
+
+    .tab-menu-box1 {
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
+    }
+
+    .tab-menu-box1 .menu {
+        line-height: 33px;
+        height: 33px;
+        background-color: #f5f5f5;
+    }
+
+    .tab-menu-box1 .content {
+        min-height: 100px;
+        border-top: 1px solid #ddd;
+        background-color: white;
+    }
+
+    .tab-menu-box1 .menu ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        /*position: absolute;*/
+    }
+
+    .tab-menu-box1 .menu ul li {
+        position: relative;
+        float: left;
+        font-size: 14px;
+        font-family: 'Microsoft Yahei','SimHei';
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        border-right: 1px solid #ddd;
+        padding: 0 18px;
+        cursor: pointer;
+    }
+
+    .tab-menu-box1 .menu ul li:hover {
+        color: #14c8c8;
+    }
+
+    .tab-menu-box1 .menu .more {
+        float: right;
+        font-size: 12px;
+        padding-right: 10px;
+        font-family: "宋体";
+        color: #666;
+        text-decoration: none;
+    }
+
+    .tab-menu-box1 .menu a:hover {
+        color: #f60 !important;
+        text-decoration: underline;
+    }
+
+    .tab-menu-box1 .menu .current {
+        margin-top: -1px;
+        color: #14c8c8;
+        background: #fff;
+        height: 33px;
+        border-top: 2px solid #14c8c8;
+        z-index: 10;
+    }
+
+    .tab-menu-box-2 .float-title {
+        display: none;
+        top: 0px;
+        position: fixed;
+        z-index: 50;
+    }
+
+    .tab-menu-box-2 .title {
+        width: 890px;
+        border-bottom: 2px solid #14c8c8;
+        border-left: 1px solid #e1e1e1;
+        clear: both;
+        height: 32px;
+    }
+
+    .tab-menu-box-2 .title a {
+        float: left;
+        width: 107px;
+        height: 31px;
+        line-height: 31px;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        border-top: 1px solid #e1e1e1;
+        border-right: 1px solid #e1e1e1;
+        <!--background: url(/Content/images/bg4.png?3) 0 -308px repeat-x;-->
+        text-decoration: none;
+        color: #333;
+        cursor: pointer;
+    }
+
+    .tab-menu-box-2 .title a:hover {
+        background-position: -26px -271px;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .tab-menu-box-2 .content {
+        min-height: 100px;
+        background-color: white;
+    }
+
+
+    .tab-menu-box3 {
+        border: 1px solid #ddd;
+    }
+
+    .tab-menu-box3 .menu {
+        line-height: 33px;
+        height: 33px;
+        background-color: #f5f5f5;
+    }
+
+    .tab-menu-box3 .content {
+        height: 214px;
+        border-top: 1px solid #ddd;
+        background-color: white;
+    }
+
+    .tab-menu-box3 .menu ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        /*position: absolute;*/
+    }
+
+    .tab-menu-box3 .menu ul li {
+        position: relative;
+        float: left;
+        font-size: 14px;
+        font-family: 'Microsoft Yahei','SimHei';
+        text-align: center;
+        font-size: 14px;
+        width:50%;
+        cursor: pointer;
+    }
+
+    .tab-menu-box3 .menu ul li:hover {
+        color: #14c8c8;
+    }
+
+    .tab-menu-box3 .menu .more {
+        float: right;
+        font-size: 12px;
+        padding-right: 10px;
+        font-family: "宋体";
+        color: #666;
+        text-decoration: none;
+    }
+
+    .tab-menu-box3 .menu a:hover {
+        color: #f60 !important;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    .tab-menu-box3 .menu .current {
+
+        margin-top: -1px;
+        color: #14c8c8;
+        background: #fff;
+        height: 33px;
+        border-top: 2px solid #14c8c8;
+        z-index: 10;
+        font-weight: bold;
+
+    }
+
+    /*公共结束*/
+</style>
+</head>
+
+<body>
+<div style="background-image: url(vstudio.jpg);height: auto; ">
+    <div style="text-align: center;color: #c84ec2;font-size: xx-large">各位老总你们好啊。
+
+    </div>
+
+
+</div>
+
+
+<div    style="background:  url(jd.png)  -0px -25px no-repeat;height :20px;width: 15px;"></div>
+<div    style="background:  url(jd.png)  -0px -0px no-repeat;height :20px;width: 15px;"></div>
+<br>
+<div  style="background-color:  honeydew;" > <p>各位老总来自：</p> </div>
+<div class='container'>
+    <div class='tab-menu-box1'>
+        <div class='menu'>
+            <ul id='tab-menu-title'>
+                <li class='current' content-to='1'>徐汇</li>
+                <li content-to='2'>闵行</li>
+                <li content-to='3'>松江</li>
+            </ul>
+        </div>
+
+        <div id='tab-menu-body' class='content'>
+            <div content='1'>徐汇区位于上海中心城区的西南部，北以长乐路、华山路、兴国路、淮海西路、凯旋路，与静安区、长宁区接壤；东以瑞金南路、陕西南路与黄浦区比邻；并濒临黄浦江与浦东新区隔江相望，以徐浦大桥与其连接；西南以虹梅路、朱梅路、老沪闵路和华泾镇关港村，与闵行区分界；全境东西相距7千米，南北相距13千米。徐家汇是上海市西南部的城市副中心。徐汇是较早基本完成旧区改造的中心城区之一。区内有著名的交通大学，以及徐家汇天主教堂等人文深厚的建筑。</div>
+            <div content='2' class='hide'>闵行区位于整个上海的地域腹部，形似一把“钥匙”，黄浦江纵贯其南北，分区为浦东、浦西两部分，东与徐汇区、浦东新区相接；南靠黄浦江与奉贤区相望；西与松江区、青浦区接壤；北与长宁区、嘉定区毗邻；虹桥国际机场位于区境边沿。闵行是上海市主要对外交通枢纽，西南地区重要的工业基地、科技及航天新区，它也是上海最靠近市中心的郊区之一。该区境内有上海交通大学（闵行校区）、华东师范大学（闵行校区）等多所高校，并有许多三资企业。</div>
+            <div content='3' class='hide'>松江区位于上海市西南部，历史文化长远，有着“上海之根” 的称呼。黄浦江上游，东与闵行区、奉贤区为邻，南、西南与金山区交界，西、北与青浦区接壤。区境南北长约24千米，东西宽约25千米。总面积605.64平方千米。截止到2013年末，总共有户籍人口595378人。常住人口173.66万人。</div>
+        </div>
+    </div>
+</div>
+<script src="./jquery-1.8.2.js"></script>
+<script type='text/javascript'>
+    $(function(){
+        ChangeTab('#tab-menu-title', '#tab-menu-body');
+    })
+    function ChangeTab(title, body) {
+        $(title).children().bind("click", function () {
+            $menu = $(this);
+            $content = $(body).find('div[content="' + $(this).attr("content-to") + '"]');
+            $menu.addClass('current').siblings().removeClass('current');
+            $content.removeClass('hide').siblings().addClass('hide');
+        });
+    }
+</script>
+<script>
+    var name='xuhuiqu';
+    var name2='minghangqu';
+    var name3='songjiangqu';
+    document.write(name+  name.length+'个字符<br>'+name2+name2.length+'个字符<br>'+name3+name3.length+'个字符<br>')
+    var a= '    aaaaa   '
+    document.write(a.trim()+ '<br>'+a)
+</script>
+
+年龄:<input id="age" value="18" /><br>
+<button onclick="myfun()">点击按钮</button>
+<p id='demo'></p>
+<script>
+   function myfun(){
+       var age,voteable;
+       age=document.getElementById('age').value;
+       voteable=(age<24)?"young":"old";
+       document.getElementById('demo').innerHTML=voteable;
+   }
+</script>
+<button onclick="fun2()"> .......</button>
+<div id='a1' style="position: fixed;background-color: darksalmon ;float: right;width: 10px;height: 100%;margin-left: 120px;" >aaaaa</div>
+<div id='a2' style="position: fixed;background-color: #d3fffd ;margin-left: 210px;height: 100%;float: right;width: 90%;" >dddddddbb</div>
+<script>
+    function fun2(){
+    document.getElementById('a1').innerHTML='dddddddddddddddddddddddd';
+    }
+</script>
+<button onclick="mytime()">时间</button>
+<p id="shijian"></p>
+<p id = 'time'></p>
+<script>
+    function mytime(){
+        var x='';
+        time = new Date().getSeconds();
+        if (time<9){x= '早上好';}
+        else{x='你好啊' ;}
+        document.getElementById('shijian').innerHTML=x;
+
+    }
+    document.getElementById('time').innerHTML=time;
+</script>
+<p id="random"></p>
+<p id ='number1'>11</p>
+<p id ='number2'>11</p>
+<script>
+var num=Math.random();
+    var shownum=document.getElementById('random');
+    if (num<0.3){shownum.innerHTML='徐汇';}
+    else if (num<0.6 && num>0.3 ){shownum.innerHTML='闵行';}
+    else {shownum.innerHTML='松江';}
+    document.getElementById('number1').innerHTML=num;
+    var d=new Date().getSeconds();
+    document.getElementById('number2').innerHTML=d;
+</script>
+<p id="case"></p>
+<p id="case2"></p>
+<script>
+    var x;
+var d=new Date().getSeconds();
+    switch (d){
+        case 6:
+            x='libai6 ';
+            break;
+        case 0:
+            x='libaitian';
+            break;
+        default:
+            x='today is a workday!work...work...;'
+    }
+document.getElementById('case').innerHTML=x;
+car=['bmw','audi','buick','honda','xiandai','benz','tesla','ford']
+    for (var i=0;i<car.length;i++){
+        document.write(car[i]+"\t\t\n"+i+'<br>')
+    }
+var i= 1,j=10; for (;i<j;){
+        document.write(i+'<br>');
+        i++;
+    }
+    var me
+var person={fname:"q",lname:'f',age:29};
+    for (me in person){
+        document.write(person[me] +'<br>')
+    }
+    document.write('----------------------------------------------------')
+</script>
+
+<p></p>
+<button onclick="while111()">点击while</button>
+<p id="whil"></p>
+<script>
+    function while111(){
+        var x='',i=0
+        while (i <100){
+        x=x+' '+i+'<br>'
+            i++;
+        }
+        document.getElementById('whil').innerHTML=x;
+    }
+    var ix=0;
+    while (car[ix]){
+        document.write(car[ix]+'<br>')
+        ix++;
+    }
+</script>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+
+</body>
+</html>
