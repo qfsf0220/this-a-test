@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>aaa</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function aa() {
+            document.write("hello.")
+        }
+
+    var arr = [1,2,3,4,5,6];
+    document.write( arr.indexOf(4)+"<br><br>"+arr.indexOf(11));//这里 4是数组的3 11数组里面没有  所以就是-1
+    document.write(arr.slice(0,2)+"<br>");//array的slice 对应 String的substring
+    document.write(arr.push("a","b"));//在末尾添加a 和 b
+    document.write(arr.unshift("a","b") + arr.shift()) //unshift添加 shift删除 从头部操作
+    document.write(arr.pop()+arr.pop()+"<br>"); //两次删除 pop()直接删除最后一个\
+    document.write(arr.sort()+arr.reverse())//正序 倒叙
+    document.write(arr.splice(2,4))//删除2到4 的元素
+        var arr2 = [5,6,76,7,8,9,0]
+        document.write(arr.concat(arr2)+"<br>") //concat 连接2个list
+        var x  = arr2.join('--');//通过 -- 符号把 arr2的元素连接起来。
+        document.write(x+"<br>")
+    </script>
+</head>
+<body>
+    <button onclick="aa()" class="test"> click</button>
+    <div class="test"> test div </div>
+</body>
+</html>
