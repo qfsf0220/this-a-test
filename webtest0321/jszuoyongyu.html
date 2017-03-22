@@ -60,6 +60,7 @@ document.writeln(xiaoming.age())
 
 
         //装饰器
+//        利用apply()，我们还可以动态改变函数的行为。
         var count = 0;
         var oldpaseInt = parseInt;
         window.parseInt = function () {
