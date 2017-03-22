@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsfor</title>
+
+    <script>
+        var a = ['q','f','s']
+        var i,x;
+        for (i=0;i<a.length;i++){
+            x=a[i]
+            document.writeln(x)
+        }
+    </script>
+    <script>
+        var a = {
+            name:'a',
+            age:28,
+            comefrom:"shanghai"
+        }
+        for (i in a){
+//            document.writeln(i+"<br>")
+            document.writeln(i+"->"+a[i])
+        }
+    </script>
+    <script>
+        //while
+        var x = 0;
+        var n = 10;
+        while (n>0){
+            x=x+n;
+            n=n-1;
+        }
+        document.writeln(x+"<br>")
+    </script>
+
+    <script>
+        //do while
+        var n = 0;
+        do{
+            document.writeln(n);
+            n+=1;
+        }while(n<10);
+
+    </script>
+    <script>
+        //初始化Map需要一个二维数组，或者直接初始化一个空Map
+        //map 类似 与 python的 dict
+        //set 类似于 python的set
+        var m = new Map([['qf',1],['zk',2],['yy',3]]);
+        document.writeln( m.get('yy'));
+
+        var m = new Map();//初始化一个map 空map
+        m.set("s",11);
+        m.set("f",12);
+        document.writeln( m.has('qf'));
+        document.writeln( m.get('f'));
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

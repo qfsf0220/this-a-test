@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>object</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        var xxx = {
+            name:'yangyi',
+            age:'25',
+            comefrom:'xuhui',
+            company:'tiancity',
+            hasdog:true
+        };
+        document.writeln(xxx.name);
+        document.writeln(xxx['age']);
+        document.writeln(xxx.nothing);
+        xxx.hasmoney=true;
+        document.writeln(xxx.hasmoney);
+        delete xxx.hasdog;
+        delete xxx.school;//删除一个没有的属性也是可以的。
+        document.writeln( 'comefrom' in xxx );//判断 comefrom是否是在xxx中
+        document.writeln(xxx.hasOwnProperty('toString'))
+
+    </script>
+    <script>
+        function aaa() {
+            alert("JavaScript把null、undefined、0、NaN和空字符串''视为false，其他值一概视为true，因此上述代码条件判断的结果是true。")
+        }
+    </script>
+</head>
+<body>
+不过要小心，如果in判断一个属性存在，这个属性不一定是xiaoming的，它可能是xiaoming继承得到的：
+
+'toString' in xiaoming; // true
+因为toString定义在object对象中，而所有对象最终都会在原型链上指向object，所以xiaoming也拥有toString属性。
+
+要判断一个属性是否是xiaoming自身拥有的，而不是继承得到的，可以用hasOwnProperty()方法：
+document.writeln(xxx.hasOwnProperty('toString'))
+<button onclick="aaa()">查看true OR false</button>
+</body>
+</html>

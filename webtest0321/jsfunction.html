@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>functiontest</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function aaa(x,y) {
+            if(x>y){
+//                document.writeln(x)
+                return(x)
+            }else {
+//                document.writeln(y)
+                return(-y)
+            }
+        }
+
+        var a = aaa(8,55);
+        var b =function (x) { //这里function(x)是一个匿名函数,这个匿名函数赋值给了b，所以b可以调用这个函数。
+            if (typeof x !== 'number') {
+                throw '你输入的为空或者非数字'; //这里参数可以多个（多个会自动忽略后面的），也可以没参数（没参数的话x就是undefined  最后计算结果就是NaN了。 这里通过typeof 进行判断// ）
+            } else {
+                return x;
+            }
+        }
+        document.writeln(a+b(5)); //a-> -55   b->5 所以输出是   -50
+
+        //arguments关键字
+//        利用arguments，你可以获得调用者传入的所有参数。
+        function aatest(x) {
+//            alert(x);
+            for (var i =0;i<arguments.length;i++){
+                alert(arguments[i]);
+
+            }
+            alert("输入了"+arguments.length+"个参数")
+        }
+        aatest(10,20,30,40);
+        //rest关键字
+        function resttest(a,b,...rest) {
+            document.writeln(a)
+            console.log(a)
+            document.writeln(b)
+            console.log(b)
+            document.writeln(rest)
+            console.log(rest)
+
+        }
+        resttest(1,2,3,4,5,6,7)
+/*
+* 这里有一个tips    如果return 一个多行语句需要跟着 { }  不然 return后面会自动补上; 语句终止。
+*/
+function abc() {
+    return {
+        age:26,name:'qf'
+    };
+}
+
+    </script>
+
+
+
+
+</head>
+<body>
+
+</body>
+</html>
