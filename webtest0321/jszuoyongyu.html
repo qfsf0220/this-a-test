@@ -22,7 +22,61 @@
             b=a+2
             ,c,d,e,f;
         document.write (a,b,c,d,f,e)
+        //js默认有一个windows的全局变量
     </script>
+
+    <script>
+        var xiaoming = {
+    name: '小明',
+    birth: 1990,
+    age: function () {
+        var y = new Date().getFullYear();
+        return y - this.birth;
+    }
+};
+document.writeln(xiaoming.age)
+document.writeln(xiaoming.age())
+
+        var yy ={
+            name:'xiaohuozi',
+            birth:1993,
+            age :function () {
+                var abc = this;
+                function getage() {
+                    var y = new Date().getFullYear();
+                    return y- abc.birth;
+                }
+                return getage()
+            }
+        }
+        
+        document.writeln(yy.age());
+    </script>
+    <script>
+        //apply 和 call()
+        //区别在于 apply吧参数打包为array   call顺序传入参数。
+        document.writeln( Math.max.apply(null,[3,4,5])+"<br>");
+        document.writeln( Math.max.call(null,3,4,5));
+
+
+        //装饰器
+        var count = 0;
+        var oldpaseInt = parseInt;
+        window.parseInt = function () {
+            count+=1;
+            return oldpaseInt.apply(null,arguments);
+        };
+
+        parseInt('1');
+        parseInt('2');
+        parseInt('3');
+        parseInt('4');
+        parseInt('4');
+        document.writeln(count)
+
+    </script>
+    
+    
 </head>
 <body>
 
