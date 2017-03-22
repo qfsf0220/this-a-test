@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        //JavaScript的函数可以嵌套，此时，内部函数可以访问外部函数定义的变量，反过来则不行：
+        function a() {
+            var x = 1;
+            function b() {
+                var y = x+1;
+
+            }
+            var z = y+1;
+        }
+    </script>
+
+    <script>
+        var    //一般情况下 严格遵守“在函数内部首先申明所有变量”这一规则
+            a=2,
+            b=a+2
+            ,c,d,e,f;
+        document.write (a,b,c,d,f,e)
+    </script>
+</head>
+<body>
+
+</body>
+</html>
