@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js filter test </title>
+    <link   rel="stylesheet" href="style.css">
+</head>
+<script>
+ //filter()接收的回调函数，其实可以有多个参数。通常我们仅使用第一个参数，表示Array的某个元素。回调函数还可以接收另外两个参数，表示元素的位置和数组本身：
+    var aaa = ['a','b','c'];
+    var x = aaa.filter(function (x,y,z) {
+        document.writeln(x+"<br>"); // a b c
+//        document.writeln(y+"<br>"); // 0,1,2
+//        document.writeln(z+"<br>"); // 变量自己
+
+//        return true;
+    })
+</script>
+<body>
+
+</body>
+</html>
