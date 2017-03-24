@@ -15,6 +15,27 @@
     </script>
 </head>
 <body>
+<dl id="drink-menu" style="border:solid 1px #ccc;padding:6px;">
+    <dt>徐汇</dt>
+    <dd>qf</dd>
+    <dt>闵行</dt>
+    <dd>zk</dd>
+    <dt>松江</dt>
+    <dd>xxd</dd>
+</dl>
+<script>
+    var menu = document.getElementById("drink-menu");
+    var drinks = document.getElementsByTagName('dt');
+    document.writeln(menu.tagName);
+    var i,s;
+    s='这里有：'
+    for (i=0 ;i<drinks.length;i++){
+        s=s+drinks[i].innerHTML+'，，，';
+    }
+    document.writeln(s);
+    console.log(drinks[0].innerHTML);
+</script>
+
 
 </body>
 </html>

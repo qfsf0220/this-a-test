@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery test</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+        <script>
+        document.writeln("jquery版本:"+$.fn.jquery+"<br>");
+        document.writeln(window.jQuery);
+        document.writeln("<br>");
+        document.writeln(window.$+"<br>");
+        document.writeln($===jQuery+"<br>");
+        document.writeln (typeof ($+"<br>"));
+
+    </script>
+</head>
+<body>
+    <br>
+    <button class="test" onclick="document.writeln('this is a test.')">233</button>
+    <div class="test"> test </div>
+    <div id="abc" style="align-content: center"> id 是abc 的 div </div>
+    <p>这个是第1个p元素</p>
+    <p>这个是第2个p元素</p>
+    <p>这个是第3个p元素</p>
+
+    <script>
+        var p =$('p'); //获取所有p元素
+        for (var i =0;i<p.length;i++){
+            document.write(p[i].innerHTML+"---");
+        }
+    </script>
+
+    <p class="green">绿色p元素</p>
+
+    <p class="red">红色p元素</p>
+    <script>
+        function aa() {
+            $('.green').hide();
+        }
+        function bb() {
+            $('.red').hide();
+        }
+        var mail = $("[name= mail]");//找到 <div name = 'mail'>
+        var passwd = $("[type= passwd]");//找到 <xxx type = 'passwd'>
+        var cba = $("[type ^=cba]");//找到 type属性 以cba开头的dom
+        var cba = $('[type $=cba]');//找到 type属性 以cba结尾的dom
+        var cba = $('[type $="cba~~"]');//找到 type属性 包含 ‘ cba~~ ’的dom 比如 type="  aaacba~~ccc"  ， type='abc  cba~~'
+        var panddiv = $('p,div'); //p 和 div都选出来。
+        var pganddg = $('p.green,div.green') //找到p class='green' 和 div class= 'green'
+
+
+
+    </script>
+<button onclick="aa()">hide 绿色</button>
+<button onclick="bb()">hide 红色</button>
+
+< class="testing">
+    <ul class="lang">
+        <li class="lang-javascript">JavaScript</li>
+        <li class="lang-python">Python</li>
+        <li class="lang-lua">Lua</li>
+    </ul>
+    <button onclick="cc()">hide lua</button>
+    <button onclick="dd()">dddd</button>
+    <script>
+        function cc() {
+            $('div ul li.lang-lua').css('color','red');
+        }
+        function dd() {
+            $('ul li').css('color','red'); //匹配到所有li
+            $('form[name=upload] input');//匹配 name属性是upload的form里的 input元素
+            //子选择器
+            $('ul.lang>li.lang-lua').css('color','blue')//这里必须在html中是父子内外关系
+            $('div>li') //这个是选不到的 []，<div> <li>当中 还有一个<ul>标签。 不构成父子关系
+        }
+    </script>
+<script>
+    //过滤器。。（filter）
+//    过滤器一般不单独使用，它通常附加在选择器上，帮助我们更精确地定位元素。
+    $('ul.lang li'); //三个结果 js py lua
+    $('ul.lang li:first-child') //选出第一个
+    $('ul.lang li:last-child') //选出最后个
+    $('ul.lang li:nth-child(2)') //选出第2 个
+    $('ul.lang li:nth-child(even)') //选出偶数个
+    $('ul.lang li:nth-child(odd)') //选出奇数个
+
+</script>
+
+</div>
+</body>
+
+</html>
