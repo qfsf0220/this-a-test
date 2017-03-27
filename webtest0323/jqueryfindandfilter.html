@@ -44,7 +44,11 @@
 
     <script>
         ////////////////filter()  过滤
-
+        var langs=$('ul li')
+        var arr =langs.map(function () {
+            return this.innerHTML.indexOf('p');//获取文本以 p开头的元素
+        }).get(); //get()方法是返回一个 string的 Array
+        document.writeln(arr)  //array 可以直接writeln出来。
     </script>
 
 </body>
