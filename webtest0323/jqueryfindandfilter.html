@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery find and filter</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+</head>
+<body>
+    <ul class="lang">
+        <li id="html">html</li>
+        <li class="js dy">js</li>
+        <li name="python">python</li>
+        <li alias="python3">python3</li>
+        <li id = 'java'>java</li>
+        <li class ="dy">swift</li>
+        <li class="php">php</li>
+        <li class="dy">haskell</li>
+        <li name="css">css</li>
+    </ul>
+    <script>
+
+        var ul = $('ul.lang');//  先选出所有ul包括li
+        ul.find('.dy').css('color','blue');//  find class 有dy的元素
+        ul.find('#java').css('color','green'); //find id 是 java的元素
+        ul.find('[name=python]').css('color','brown'); //find name = python的元素
+        ul.find ('[alias  =python3]').css('color','black');//find xxx = xx的元素
+        //如果从当前元素开始向上找 使用parent()方法
+
+        var java = $('#java');
+        java.parent().css('font-size','12px');
+        java.next().css('font-size','22px');//java的下一个元素
+        java.prev().css('font-size','22px').css('color','yellow');//java前一个元素
+//        $('#java').next(".dy").css('background','yellowgreen');//java前一个class 包含dy的元素
+        java.next("[name=css]").css('background','yellowgreen');//java前一个name 包含css的元素 （测试不行）
+        java.prev("#html").css('color','red');//（测试不行）
+
+//        java.parent('div.red');
+
+
+
+    </script>
+
+</body>
+</html>
