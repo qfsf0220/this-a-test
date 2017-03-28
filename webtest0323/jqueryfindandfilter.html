@@ -28,13 +28,13 @@
         ul.find ('[alias  =python3]').css('color','black');//find xxx = xx的元素
         //如果从当前元素开始向上找 使用parent()方法
 
-        var java = $('#java');
+        var java = $('li#java');
         java.parent().css('font-size','12px');
         java.next().css('font-size','22px');//java的下一个元素
         java.prev().css('font-size','22px').css('color','yellow');//java前一个元素
 //        $('#java').next(".dy").css('background','yellowgreen');//java前一个class 包含dy的元素
         java.next("[name=css]").css('background','yellowgreen');//java前一个name 包含css的元素 （测试不行）
-        java.prev("#html").css('color','red');//（测试不行）
+        java.prev("li#html").css('color','red');//（测试不行）
 
 //        java.parent('div.red');
 

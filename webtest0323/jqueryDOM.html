@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery dom</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+
+</head>
+<body>
+    <ul id="test-ul">
+    <li class="js">JavaScript</li>
+    <li name="book">Java &amp; JavaScript</li>
+    <li type="server">Python</li>
+</ul>
+    <script>
+        var a = $('ul li[type=server]').text();
+        document.writeln(a);
+        var b= $('ul li.js').text();
+        document.writeln(b);
+        var c= $('ul li[name=book]').html();
+        var d= $('ul li[name=book]').text();
+        document.writeln(c);
+        document.writeln(d);
+        var e = $('ul li').text('js')  //把元素的 text 变成js  html同样有效果
+    </script>
+
+    <ul id="test-css">
+    <li class="lang dy"><span>JavaScript</span></li>
+    <li class="lang"><span>Java</span></li>
+    <li class="lang dy"><span>Python</span></li>
+    <li class="lang"><span>Swift</span></li>
+    <li class="lang dy"><span>Scheme</span></li>
+</ul>
+    <div class = 'test'>
+        不错的
+    </div>
+    <script>
+        $('ul li.dy span').css('background-color','orange').css('color','red')
+//        $('#test-css li.dy>span').css('background-color', '#ffd351').css('color', 'red');
+        var div= $('div.test');
+        var color = div.css('color');//获取css属性
+        document.writeln(color);
+        div.css('color','');//清除 css属性
+        document.writeln( div.hasClass('highlight')); //是否 属于highlight  这个class
+        document.writeln( div.addClass('highlight')); //添加
+        document.writeln( div.hasClass('highlight'));
+        document.writeln( div.removeClass('highlight')); //删除
+        document.writeln( div.hasClass('highlight')+"<br>");
+
+        document.writeln("宽度："+div.width());
+        document.writeln("长度："+div.height());
+        div.width(100); //直接设置 width 为400px
+        div.height('100px'); //直接设置 height 为400px
+
+
+    </script>
+
+    <div id="test div" name="test" start="1">prop()方法和attr()类似，但是HTML5规定有一种属性在DOM节点中可以没有值 </div>
+    <script>
+        document.writeln("<br>"+'attr()和removeAttr()方法用于操作DOM节点的属性：'+"<br>");
+        var xx =  div.attr('name');
+        div.attr('name','qqqqqqqq');
+        document.writeln(xx);
+    </script>
+        <p></p>
+        <input id="test-input" name="email" value="test??">
+    <select id="test-select" name="city">
+        <option value="BJ" selected>Beijing</option>
+        <option value="SH">Shanghai</option>
+        <option value="SZ">Shenzhen</option>
+    </select>
+    <textarea id="test-textarea">Hello</textarea>
+    <script>
+        var
+            input = $('#test-input'),
+            select = $('#test-select'),
+            textarea =$('#test-textarea');
+            document.writeln(input.val());
+            console.log(input.val());
+            input.val(' what？')
+            select.val('SH')
+            textarea.val('hi boss');
+    </script>
+
+</body>
+</html>
