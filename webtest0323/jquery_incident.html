@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery incident</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a id="testlink" href="#0">click ...鼠标单击时触发；</a><br>
+    <a name="dblclick" href="#0">dbclick ...鼠标双击时触发；</a><br>
+    <a name="mouseenter" href="#0" style="height: 30px ; width:20px">mouseenter ...鼠标进入时触发；</a><br>
+    <a name="mouseleave" href="#0">mouseleave ...鼠标移出时触发；</a><br>
+    <a name="mousemove" href="#0">mousemove ...鼠标在DOM内部移动时触发；</a><br>
+    <a name="hover" href="#0">hover ... 鼠标进入和退出时触发两个函数，相当于mouseenter加上mouseleave。</a><br>
+    <a name="mousedown" href="#0">mousedown  and mouseup  ...
+当在元素上松开鼠标按钮时，会发生 mouseup 事件。 当鼠标指针移动到元素上方，并按下鼠标按键时，会发生 mousedown 事件。</a><br>
+    <a name="focus" href="#0">focus ...当元素获得焦点时，发生 focus 事件。</a><br>
+    <a name="blur" href="#0">blur ...当元素失去焦点时，发生 blur 事件。</a>
+
+    <script>
+        var a=$('#testlink');
+        var b = $('[name=dblclick]');
+        var c = $('[name=mouseenter]');
+        var d = $('[name=mouseleave]');
+        var e = $('[name=mousemove]');
+        var f = $('[name=hover]');
+
+        a.on('click',function () {
+            alert('hi，你好');
+        })
+
+        b.dblclick(function () {
+            alert('hi hi');
+        })
+        c.on('mouseenter',function () {
+            alert('enter');
+        });
+        /*
+        * 这个也可以这样写
+        * c.mouseenter(function){
+        *   alert('xxx');
+        * }
+        * */
+        d.on('mouseleave',function () {
+            alert('leave');
+        })
+        e.on('mousemove',function () {
+            alert('move');
+        })
+        f.hover(function () {
+            alert('hover enter')
+        },function () {
+            alert('hover leave')
+        })
+        $("[name=mousedown]").mousedown(function () {
+            alert("puton and click");
+        })
+        $("[name=focus]").focus(function () {
+            $(this).css('background-color','greenyellow')
+        })
+        $("[name=blur]").blur(function () {
+            $(this).css("background-color","#ffffff");
+        })
+    </script>
+
+</body>
+</html>
