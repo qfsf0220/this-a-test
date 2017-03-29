@@ -40,5 +40,23 @@
         })
     </script>
 
+     <textarea id='phptest'></textarea>
+    <script>
+        //jquery get方法
+//        $.get()
+        //$.get(URL,callback);
+        //必需的 URL 参数规定您希望请求的 URL。
+        //可选的 callback 参数是请求成功后所执行的函数名。
+
+        $.get("test.php",function(data,status) {
+//            $("#phptest").html("<b>data:</b>"+data+"<b>status:</b>"+status);
+
+             $("#phptest").text(function () {
+                    return  "data:"+data+"\nstatus:"+status;
+             });  //把上面的p元素的text 改成 data。。status。。 不过 换行符无法使用 可能是因为替换的元素只指定了一行    p改成 textarea以后 ok。
+            alert("数据: \n" + data + "\n状态: " + status); //alert 可以换行
+        })
+    </script>
+
 </body>
 </html>
