@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery AJAX</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li id ="1">aaa</li>
+        <li id ="2">bbb</li>
+        <li id ="3">ccc</li>
+        <li id ="4">ddd</li>
+        <li id ="5">eee</li>
+        <li id ="6">fff</li>
+    </ul>
+    <div id="div1"><h2>使用 jQuery AJAX 修改该文本</h2></div>
+    <button>获取外部内容</button>
+    <script>
+        //$('ul li#6').load(URL,data,callback);
+//        必需的 URL 参数规定您希望加载的 URL。
+//        可选的 data 参数规定与请求一同发送的查询字符串键/值对集合。
+//        可选的 callback 参数是 load() 方法完成后所执行的函数名称。
+        $('#6').load("abc.txt li#3"); //加载abc.txt 中 id3的li元素
+        //load 还有可选的 callback 回调函数
+//        responseTxt - 包含调用成功时的结果内容
+//        statusTXT - 包含调用的状态
+//        xhr - 包含 XMLHttpRequest 对象
+        $(document).ready(function () {
+            $('button').click('on',function () {
+               $('#div1').load("abc.txt li#xx",function (responseTxt,statusTxt,xhr) {
+                   if(statusTxt=="success"){
+                       alert("外部内容加载ok");
+                   }else{
+                       alert("错误信息:"+xhr.status+"::"+xhr.statusText);
+                   }
+               }) 
+            })
+        })
+    </script>
+
+</body>
+</html>
