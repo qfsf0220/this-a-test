@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery effect</title>
+    <link  rel="stylesheet" href="style.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+
+</body>
+    <div class="test" name="showhide"> show hide </div>
+    <div class="test" name="animate"> animate </div>
+    <script>
+        var div = $("[name=showhide]");
+        var div2 = $("[name=animate]");
+        div.hide('slow');
+        div.show(1000);
+        div.toggle(500);//以上是左上角收放
+        div.slideDown(1000);
+        div.slideUp(1000);
+        div.slideToggle(500); //以上是上下显示
+        div.fadeOut(500);
+        div.fadeIn(500);
+        div.fadeOut(500);
+        div.fadeIn(500);
+        div.fadeToggle(500); //以上是淡入淡出
+
+        div2.animate({opacity:0.55,width:'256px',height:'256px'},2000,function () {
+            console.log ('action done.');
+            $(this).fadeOut(2000);
+
+        })
+    </script>
+</html>
