@@ -58,5 +58,23 @@
         })
     </script>
 
+    <script>
+        // juqery post
+//        POST 也可用于从服务器获取数据。不过，POST 方法不会缓存数据，并且常用于连同请求一起发送数据。
+//        一般情况下post是提交数据为主
+        $("button").click(function(){
+    $.post("demo_test_post.php",
+    {
+        name:"菜鸟教程",
+        url:"http://www.runoob.com"
+    },
+        function(data,status){
+        alert("数据: \n" + data + "\n状态: " + status);
+    });
+});
+//$.post()  请求 url demotestpost 然后 带上name 和url参数 发送数据 php通过name url返回结果
+//        这里有一点问题。。获取的直接是html
+    </script>
+
 </body>
 </html>
