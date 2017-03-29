@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery extend</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    //当某一个css操作 使用率较高 就可以使用 $.fn 对象实现。
+    <div id="a">dddddddadasdsadas</div>
+
+    <script>
+        $.fn.highlight = function () {
+            $(this).css('backgroundColor','yellowgreen').css('color','purple');
+            return this;//这里 return this 因为jQuery对象支持链式操作，我们自己写的扩展方法也要能继续链式下去   不然，用户调用的时候，就不得不把上面的代码拆成两行。
+        };
+
+        //如果希望高亮的颜色能自己来指定 可以给方法加个参数，让用户自己把参数用对象传进去。
+        $.fn.highlight2 = function (options) {
+    // 要考虑到各种情况:
+    // options为undefined
+    // options只有部分key
+    var bgcolor = options && options.backgroundColor || '#fffceb';
+    var color = options && options.color || '#d85030';
+    this.css('backgroundColor', bgcolor).css('color', color);
+    return this;
+}
+
+
+        $('div#a').highlight()
+    </script>
+
+
+</body>
+</html>
