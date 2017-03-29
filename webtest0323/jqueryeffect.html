@@ -26,9 +26,16 @@
         div.fadeIn(500);
         div.fadeToggle(500); //以上是淡入淡出
 
+        //上面也可以写成div.fadeIn(500).fadeOut(500).fadeIn(500);
+        //$("#p1").css("color","red").slideUp(2000).slideDown(2000);
+        // 这种叫jquery方法链接
+
         div2.animate({opacity:0.55,width:'256px',height:'256px'},2000,function () {
             console.log ('action done.');
             $(this).fadeOut(2000);
+            //这里 console.log 打印  直接在动作中跟上 function 就是  jquery的callback
+            //div2.hide(2000);
+            //console.log('');//这样没有回调函数的话  在动画没有执行完之前，就会打印log
 
         })
     </script>
